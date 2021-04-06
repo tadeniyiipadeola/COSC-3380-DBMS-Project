@@ -1,0 +1,6 @@
+﻿Project_ID,Pname,Pstatus,State_date,End_date,Total cost,Man_hours,Managers_Emp_ID,Task_ID,Customer_ID
+12001,A,In_Progress,10/1/2016,,,,19006,,103
+12002,B,In_Progress,10/2/2011,,,,19013,,103
+12003,C,Finish,10/3/2019,3/19/2021,"4,245,024",7340,19017,,102
+12004,D,In_Progress,10/4/2009,,,,19014,,102
+12005,E,In_Progress,10/5/2017,,,,19011,,101

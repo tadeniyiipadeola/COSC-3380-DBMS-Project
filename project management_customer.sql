@@ -25,7 +25,9 @@ DROP TABLE IF EXISTS `customer`;
 CREATE TABLE `customer` (
   `Customer_ID` int NOT NULL,
   `Customer_name` varchar(45) NOT NULL,
-  PRIMARY KEY (`Customer_ID`)
+  `p_id` int NOT NULL,
+  PRIMARY KEY (`Customer_ID`),
+  KEY `Pro_ID_idx` (`p_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -35,7 +37,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` VALUES (101,'Chase'),(102,'TESLA'),(103,'NEON');
+INSERT INTO `customer` VALUES (101,'Chase',0),(102,'TESLA',0),(103,'NEON',0);
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-06  2:37:51
+-- Dump completed on 2021-04-06 13:53:42

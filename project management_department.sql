@@ -26,8 +26,10 @@ CREATE TABLE `department` (
   `D_num` int NOT NULL,
   `Manager_Emp_ID` int NOT NULL,
   `D_name` varchar(45) NOT NULL,
-  PRIMARY KEY (`D_num`),
-  KEY `Man_Emp_ID_idx` (`Manager_Emp_ID`)
+  PRIMARY KEY (`Manager_Emp_ID`),
+  UNIQUE KEY `Manager_Emp_ID_UNIQUE` (`Manager_Emp_ID`),
+  KEY `Dno_idx` (`D_num`),
+  CONSTRAINT `Dno` FOREIGN KEY (`D_num`) REFERENCES `location` (`D_num`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -50,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-06  2:37:52
+-- Dump completed on 2021-04-06 13:53:42

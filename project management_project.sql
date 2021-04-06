@@ -33,7 +33,11 @@ CREATE TABLE `project` (
   `Manager_Emp_ID` int NOT NULL,
   `Task_ID` int DEFAULT NULL,
   `Customer_ID` int NOT NULL,
-  PRIMARY KEY (`P_id`)
+  PRIMARY KEY (`P_id`),
+  KEY `Man_Emp_ID_idx` (`Manager_Emp_ID`),
+  KEY `Customer_ID_idx` (`Customer_ID`),
+  CONSTRAINT `Customer_ID` FOREIGN KEY (`Customer_ID`) REFERENCES `customer` (`Customer_ID`),
+  CONSTRAINT `Man_Emp_ID` FOREIGN KEY (`Manager_Emp_ID`) REFERENCES `employee` (`Emp_ID`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -55,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-23  1:20:55
+-- Dump completed on 2021-04-06  2:37:52

@@ -24,9 +24,10 @@ DROP TABLE IF EXISTS `department`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `department` (
   `D_num` int NOT NULL,
-  `Manager_Emp_ID` varchar(45) NOT NULL,
+  `Manager_Emp_ID` int NOT NULL,
   `D_name` varchar(45) NOT NULL,
-  PRIMARY KEY (`D_num`)
+  PRIMARY KEY (`D_num`),
+  KEY `Man_Emp_ID_idx` (`Manager_Emp_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -36,7 +37,7 @@ CREATE TABLE `department` (
 
 LOCK TABLES `department` WRITE;
 /*!40000 ALTER TABLE `department` DISABLE KEYS */;
-INSERT INTO `department` VALUES (3001,'1','Engineering'),(3002,'2','Marketing'),(3003,'3','Sales'),(3004,'4','HR');
+INSERT INTO `department` VALUES (3001,1,'Engineering'),(3002,2,'Marketing'),(3003,3,'Sales'),(3004,4,'HR');
 /*!40000 ALTER TABLE `department` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-23  1:20:54
+-- Dump completed on 2021-04-06  2:37:52

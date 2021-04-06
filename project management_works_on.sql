@@ -16,27 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `location`
+-- Table structure for table `works_on`
 --
 
-DROP TABLE IF EXISTS `location`;
+DROP TABLE IF EXISTS `works_on`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `location` (
-  `D_location` varchar(45) NOT NULL,
-  `D_num` int NOT NULL,
-  PRIMARY KEY (`D_num`)
+CREATE TABLE `works_on` (
+  `Hours` float NOT NULL,
+  `Emp_ID` int NOT NULL,
+  `P_ID` int NOT NULL,
+  KEY `e_id_idx` (`Emp_ID`),
+  KEY `P_num_idx` (`P_ID`),
+  CONSTRAINT `emp_id` FOREIGN KEY (`Emp_ID`) REFERENCES `employee` (`Emp_ID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `P_num` FOREIGN KEY (`P_ID`) REFERENCES `project` (`P_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `location`
+-- Dumping data for table `works_on`
 --
 
-LOCK TABLES `location` WRITE;
-/*!40000 ALTER TABLE `location` DISABLE KEYS */;
-INSERT INTO `location` VALUES ('Houston',3001),('Austin',3002),('DALLAS',3003),('San Antionio',3004);
-/*!40000 ALTER TABLE `location` ENABLE KEYS */;
+LOCK TABLES `works_on` WRITE;
+/*!40000 ALTER TABLE `works_on` DISABLE KEYS */;
+/*!40000 ALTER TABLE `works_on` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
